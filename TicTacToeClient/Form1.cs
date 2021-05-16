@@ -31,13 +31,12 @@ namespace TicTacToeClient
         {
             if (this.userID == 2)
             {
-                this.turnLabel.Text = "Сейчас ходит соперник";
-                Thread waitThread = new Thread(new ThreadStart(WaitTurn));
-                waitThread.Start();
+                this.turnLabel.Text = "Первым ходит соперник";
+                WaitTurn();
             }
             else
             {
-                this.turnLabel.Text = "Сейчас Ваш ход";
+                this.turnLabel.Text = "Первым ходите Вы";
             }
             startButton.Enabled = false;
         }
@@ -122,11 +121,10 @@ namespace TicTacToeClient
             string isOver = gameIsOver();
             if (isOver == null)
             {
-                this.turnLabel.Text = "Сейчас ходит соперник";
+                this.turnLabel.Text = "";
                 foreach (Button btn in buttons)
                     btn.Enabled = false;
-                Thread waitThread = new Thread(new ThreadStart(WaitTurn));
-                waitThread.Start();
+                WaitTurn();
             } else
             {
                 if (isOver == symbol) turnLabel.Text = "Вы победили";
@@ -145,9 +143,16 @@ namespace TicTacToeClient
             string isOver = gameIsOver();
             if (isOver == null)
             {
-                this.turnLabel.Text = "Сейчас Ваш ход";
+                int fillBtns = 0;
                 foreach (Button btn in buttons)
+                {
                     btn.Enabled = true;
+                    if (btn.Text != "") fillBtns++;
+                }
+
+                if (fillBtns == 9) this.turnLabel.Text = "Ничья";
+                else this.turnLabel.Text = "";
+              
             }
             else
             {
