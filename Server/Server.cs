@@ -57,12 +57,10 @@ namespace Server
             numOfLastChangedBtn = int.Parse(parsedLine[2]);
             if (parsedLine[1].Equals("1")) nowTurn = 2;
             else nowTurn = 1;
-            Console.WriteLine(nowTurn);
         }
 
         private static void answerWhoose(Socket listener)
         {
-            Console.WriteLine(nowTurn.ToString() + " " + numOfLastChangedBtn.ToString());
             listener.Send(Encoding.UTF8.GetBytes(nowTurn.ToString() + " " + numOfLastChangedBtn.ToString()));
         }
 
@@ -72,12 +70,10 @@ namespace Server
             {
                 firstUsrIsInit = true;
                 listener.Send(Encoding.UTF8.GetBytes("2"));
-                Console.WriteLine("2");
             } else
             {
                 secondUsrIsInit = true;
                 listener.Send(Encoding.UTF8.GetBytes("1"));
-                Console.WriteLine("1");
             }
         }
     }

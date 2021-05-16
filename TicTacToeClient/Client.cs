@@ -8,9 +8,10 @@ namespace TicTacToeClient
 {
     class Client
     {
-        String host; int port;
         private byte[] buffer = new byte[256];
         private StringBuilder answer = new StringBuilder();
+
+        String host; int port;
 
         public Client(String host, int port)
         {

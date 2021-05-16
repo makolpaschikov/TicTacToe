@@ -121,14 +121,24 @@ namespace TicTacToeClient
             string isOver = gameIsOver();
             if (isOver == null)
             {
-                this.turnLabel.Text = "";
+                int fillBtns = 0;
                 foreach (Button btn in buttons)
-                    btn.Enabled = false;
+                {
+                    btn.Enabled = true;
+                    if (btn.Text != "") fillBtns++;
+                }
+                if (fillBtns == 9)
+                {
+                    this.turnLabel.Text = "Ничья";
+                    foreach (Button btn in buttons)
+                        btn.Enabled = false;
+                    return;
+                }
+                else this.turnLabel.Text = "";
                 WaitTurn();
             } else
             {
                 if (isOver == symbol) turnLabel.Text = "Вы победили";
-                else turnLabel.Text = "Вы проиграли";
                 foreach (Button btn in buttons)
                     btn.Enabled = false;
             }  
@@ -146,13 +156,18 @@ namespace TicTacToeClient
                 int fillBtns = 0;
                 foreach (Button btn in buttons)
                 {
-                    btn.Enabled = true;
+                    if (btn.Text == "") btn.Enabled = true;
                     if (btn.Text != "") fillBtns++;
                 }
 
-                if (fillBtns == 9) this.turnLabel.Text = "Ничья";
+                if (fillBtns == 9)
+                {
+                    this.turnLabel.Text = "Ничья";
+                    foreach (Button btn in buttons)
+                        btn.Enabled = false;
+                    return;
+                }
                 else this.turnLabel.Text = "";
-              
             }
             else
             {
