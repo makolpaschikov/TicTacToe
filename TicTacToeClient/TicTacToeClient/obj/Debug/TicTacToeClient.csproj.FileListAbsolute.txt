@@ -1,0 +1,11 @@
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\bin\Debug\TicTacToeClient.exe.config
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\bin\Debug\TicTacToeClient.exe
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\bin\Debug\TicTacToeClient.pdb
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.Form1.resources
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.Properties.Resources.resources
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.csproj.GenerateResource.cache
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.csproj.CoreCompileInputs.cache
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.exe
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.pdb
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.csprojAssemblyReference.cache
+C:\Users\dr9ke\source\repos\TicTacToeClient\TicTacToeClient\obj\Debug\TicTacToeClient.InitForm.resources
