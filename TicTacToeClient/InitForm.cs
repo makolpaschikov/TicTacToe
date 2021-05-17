@@ -25,5 +25,10 @@ namespace TicTacToeClient
             form.Show();
             this.Hide();
         }
+
+        private void InitForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

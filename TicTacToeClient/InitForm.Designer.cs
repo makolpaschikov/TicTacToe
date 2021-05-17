@@ -90,6 +90,7 @@ namespace TicTacToeClient
             this.Controls.Add(this.ip);
             this.Name = "InitForm";
             this.Text = "Ввод данных";
+            this.Load += new System.EventHandler(this.InitForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

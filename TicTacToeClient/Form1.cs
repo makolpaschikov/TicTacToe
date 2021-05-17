@@ -26,7 +26,7 @@ namespace TicTacToeClient
             InitButtons();
         }
 
-        /*--------- Buttons ---------*/
+        /*-------— Buttons —-------*/
         private void startButton_Click(object sender, EventArgs e)
         {
             if (this.userID == 2)
@@ -87,7 +87,7 @@ namespace TicTacToeClient
             SendTurn("9");
         }
 
-        /*--------- Private ---------*/
+        /*-------— Private —-------*/
 
         private void InitClient(string ip, int port)
         {
@@ -96,7 +96,8 @@ namespace TicTacToeClient
             if (this.userID == 2)
             {
                 this.symbol = "O";
-            } else
+            }
+            else
             {
                 this.symbol = "X";
             }
@@ -104,9 +105,9 @@ namespace TicTacToeClient
 
         private void InitButtons()
         {
-            this.buttons = new Button[] 
-            { 
-                this.button1, this.button2, this.button3,this.button4,this.button5,this.button6,this.button7, this.button8, this.button9
+            this.buttons = new Button[]
+            {
+this.button1, this.button2, this.button3,this.button4,this.button5,this.button6,this.button7, this.button8, this.button9
             };
             if (userID == 2)
             {
@@ -115,33 +116,25 @@ namespace TicTacToeClient
             }
         }
 
-        private void SendTurn(String buttonNum) {
+        private void SendTurn(String buttonNum)
+        {
             client.sendTurn("send_turn" + " " + userID + " " + buttonNum);
 
             string isOver = gameIsOver();
             if (isOver == null)
             {
-                int fillBtns = 0;
-                foreach (Button btn in buttons)
-                {
-                    btn.Enabled = true;
-                    if (btn.Text != "") fillBtns++;
-                }
-                if (fillBtns == 9)
-                {
-                    this.turnLabel.Text = "Ничья";
-                    foreach (Button btn in buttons)
-                        btn.Enabled = false;
-                    return;
-                }
-                else this.turnLabel.Text = "";
-                WaitTurn();
-            } else
-            {
-                if (isOver == symbol) turnLabel.Text = "Вы победили";
+                this.turnLabel.Text = "";
                 foreach (Button btn in buttons)
                     btn.Enabled = false;
-            }  
+                WaitTurn();
+            }
+            else
+            {
+                if (isOver == symbol) turnLabel.Text = "Вы победили";
+                else turnLabel.Text = "Вы проиграли";
+                foreach (Button btn in buttons)
+                    btn.Enabled = false;
+            }
         }
 
         public void WaitTurn()
@@ -156,18 +149,13 @@ namespace TicTacToeClient
                 int fillBtns = 0;
                 foreach (Button btn in buttons)
                 {
-                    if (btn.Text == "") btn.Enabled = true;
+                    btn.Enabled = true;
                     if (btn.Text != "") fillBtns++;
                 }
 
-                if (fillBtns == 9)
-                {
-                    this.turnLabel.Text = "Ничья";
-                    foreach (Button btn in buttons)
-                        btn.Enabled = false;
-                    return;
-                }
+                if (fillBtns == 9) this.turnLabel.Text = "Ничья";
                 else this.turnLabel.Text = "";
+
             }
             else
             {
@@ -188,7 +176,9 @@ namespace TicTacToeClient
             // Vertical
             if (button1.Text == button4.Text && button1.Text == button7.Text && button1.Text != "") return button1.Text;
             if (button2.Text == button5.Text && button2.Text == button8.Text && button2.Text != "") return button2.Text;
-            if (button3.Text == button6.Text && button3.Text == button9.Text && button3.Text != "") return button3.Text;
+            if (button3.Text == button6.Text && button3.Text == button9.Text &&
+
+            button3.Text != "") return button3.Text;
 
             // Diagonal
             if (button1.Text == button5.Text && button1.Text == button9.Text && button1.Text != "") return button1.Text;
@@ -199,5 +189,9 @@ namespace TicTacToeClient
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

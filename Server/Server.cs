@@ -23,7 +23,7 @@ namespace Server
             var tcpSocet = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             tcpSocet.Bind(new IPEndPoint(IPAddress.Parse(ip), port));
             tcpSocet.Listen(2);
-
+            Console.WriteLine("Server started");
             while (true)
             {
                 var listener = tcpSocet.Accept();
